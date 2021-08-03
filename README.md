@@ -3,3 +3,4 @@ This is a Project which inculcates a **web application** , that is designed enti
 
 
 **Usage** : The EverNote application is designed in a way , such that the  users using it can get experienced with social note posting . The concept of social note posting , is effective in a way that it will enable the users to share their idea accross everyone who will be using EverNote . Complimentary to that , they can even view others posts or ideas 
+as well , gaining an insight to different thoughts , cultures , innovative ideas , etc. 
