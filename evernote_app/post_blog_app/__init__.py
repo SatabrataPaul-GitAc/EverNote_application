@@ -7,7 +7,7 @@ from flask_mail import Mail
 
 
 web_app = Flask(__name__)
-web_app.config['SECRET_KEY']="693eab612231fb67ae2f206f38dac69d"
+web_app.config['SECRET_KEY']= os.environ.get('SECRET_KEY')
 web_app.config['SQLALCHEMY_DATABASE_URI']="sqlite:///site.db"
 db = SQLAlchemy(web_app)
 bcrypt_obj = Bcrypt(app=web_app)
