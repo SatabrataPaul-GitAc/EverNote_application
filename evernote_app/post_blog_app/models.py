@@ -38,7 +38,7 @@ class User(db.Model, UserMixin):
 class Post(db.Model):
     id = db.Column("id",db.Integer,primary_key=True)
     title = db.Column("title",db.String(100),nullable=False)
-    date_posted = db.Column("date",db.Date,nullable=False,default=date.today)
+    date_posted = db.Column("date",db.DateTime,nullable=False,default=datetime.now)
     content = db.Column("post_content",db.Text,nullable=False)
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'),nullable=False)
 
