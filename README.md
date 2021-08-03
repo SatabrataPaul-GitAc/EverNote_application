@@ -32,7 +32,7 @@ The following points list out the features that EverNote provides :
      + Nginx 
      + Gunicorn
 <br />
-**NOTE** - Nginx and Gunicorn play an important role . FLASK as a web development framework is not suitable enough for production environment. 
+**NOTE**: Nginx and Gunicorn play an important role . FLASK as a web development framework is not suitable enough for production environment. 
 This is because , it is unable to handle high amount of traffic. That's where Nginx and Gunicorn comes into the picture,  providing support with static and dynamic proxies to the application code in the server . 
 
 <br />
