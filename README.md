@@ -16,6 +16,9 @@ The following points list out the features that EverNote provides :
 - **Update account information**
 - **Upload or update the profile picture associated with the account**
 - **Create a post**
-- **Update existing post or delete them**
-- **Password Reset on forgetting it**
+- **Update an existing post or delete them**
+- **Password Reset on functionality**
+
+<br />
+
 
