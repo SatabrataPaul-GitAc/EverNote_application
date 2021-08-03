@@ -8,5 +8,7 @@ as well , gaining an insight to different thoughts , cultures , innovative ideas
 <br /><br /><br />
 
 ## Features of EverNote Application: 
-<br />
-The 
+The following points list out the features that EverNote provides : 
+
+- **Register or Create an account** 
+- **Login to the account created**
