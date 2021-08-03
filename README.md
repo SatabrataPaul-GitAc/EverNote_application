@@ -35,5 +35,5 @@ The following points list out the features that EverNote provides :
 <br />
 
 ## Demo Video (EverNote) :
-Video Link -> [Click Here](https://drive.google.com/file/d/1K1DfxVGcP4LSQu9EFgW-t9HJiz9QpY3p/view?usp=sharing)
+**Video Link -> [Click Here]**(https://drive.google.com/file/d/1K1DfxVGcP4LSQu9EFgW-t9HJiz9QpY3p/view?usp=sharing)
 
