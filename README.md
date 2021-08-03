@@ -21,4 +21,13 @@ The following points list out the features that EverNote provides :
 
 <br />
 
-
+## Tech Stacks Used:
+- Front End Design :
+     + HTML5
+     + CSS (Cascading Styling Sheets)
+     + Bootstrap 4 
+- Backend Design :
+     + FLASK in Python
+- Webserver and WSGI :
+     + Nginx 
+     + Gunicorn
