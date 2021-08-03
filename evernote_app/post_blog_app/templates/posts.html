@@ -17,7 +17,7 @@
             {% else %} 
               <a class="mr-2" href="">{{ p.author.username }}</a>
             {% endif %} 
-            <small class="text-muted"><b>Posted On : {{ p.date_posted }}</b></small>
+            <small class="text-muted"><b>Posted On : {{ p.date_posted.strftime("%Y-%m-%d") }}</b></small>
           </div>
           
           {% if current_user.is_authenticated %}
