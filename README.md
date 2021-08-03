@@ -12,3 +12,10 @@ The following points list out the features that EverNote provides :
 
 - **Register or Create an account** 
 - **Login to the account created**
+- **View all Social Notes Posted by all users**
+- **Update account information**
+- **Upload or update the profile picture associated with the account**
+- **Create a post**
+- **Update existing post or delete them**
+- **Password Reset on forgetting it**
+
