@@ -1,0 +1,32 @@
+{% extends "layout_page.html" %} 
+{% block contents %} 
+  <h1>LATEST POSTS !</h1>
+  <b><hr></b>
+  <br>
+    {% for p in posts.items %} 
+    <article class="media content-section">
+      <img class="rounded-circle article-img" src="{{ url_for('static',filename='profile_pic/'+ p.author.image_file) }}">
+        <div class="media-body">
+          <div class="article-metadata">
+            {% if current_user.is_authenticated %}
+                {% if p.author.username == current_user.username %}
+                    <a class="mr-2" href="/account" data-toggle="tooltip" data-placement="bottom" title="Account Info">{{ p.author.username }}</a>
+                {% else %} 
+                    <a class="mr-2" href="">{{ p.author.username }}</a>
+                {% endif %} 
+            {% else %} 
+                <a class="mr-2" href="">{{ p.author.username }}</a>
+            {% endif %} 
+            <small class="text-muted"><b>Posted On : {{ p.date_posted }}</b></small>
+          </div>
+
+          {% if current_user.is_authenticated %}
+            <h2><a class="article-title" data-toggle="tooltip" data-placement="bottom" title="View Post" href="{{ url_for('post',post_id=p.id) }}">{{ p.title }}</a></h2>
+          {% else %} 
+            <h2><a class="article-title" href="">{{ p.title }}</a></h2>
+          {% endif %} 
+          <p class="article-content">{{ p.content }}</p>
+        </div>
+    </article>
+    {% endfor %}
+{% endblock contents %}

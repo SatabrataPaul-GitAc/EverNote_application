@@ -1,0 +1,47 @@
+{% extends "layout_page.html" %}
+{% block contents %} 
+<div class="content-section shadows">
+    <form method="POST" action="">
+        {{ form_blp.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="boder-bottom mb-4"><h3>{{ legend }} !</h3></legend>
+            <div class="form-group">
+                {{ form_blp.title.label(class="form-control-label") }}
+
+                {% if form_blp.title.errors %} 
+                    {{ form_blp.title(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form_blp.title.errors %}
+                            <span>
+                                {{ error }}
+                            </span> 
+                        {% endfor %}
+                    </div>
+                {% else %} 
+                    {{ form_blp.title(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form_blp.content.label(class="form-control-label") }}
+
+                {% if form_blp.content.errors %} 
+                    {{ form_blp.content(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form_blp.content.errors %}
+                            <span>
+                                {{ error }}
+                            </span> 
+                        {% endfor %}
+                    </div>
+                {% else %} 
+                    {{ form_blp.content(class="form-control form-control-lg") }}
+                {% endif %} 
+            </div>
+        </fieldset>
+        <br>
+        <div class="form-group">
+            {{ form_blp.submit(class="btn btn-primary")}}
+        </div>
+    </form>
+</div>
+{% endblock contents %}

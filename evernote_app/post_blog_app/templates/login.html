@@ -1,0 +1,51 @@
+{% extends "layout_page.html" %}
+{% block contents %}
+    <div class="content-section shadows">
+        <form method="POST" action="">
+            {{ form_blp.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="boder-bottom mb-4"><h3>Log In</h3></legend>
+                <div class="form-group">
+                    {{ form_blp.email.label(class="form-control-label") }}
+
+                    {% if form_blp.email.errors %} 
+                        {{ form_blp.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form_blp.email.errors %}
+                                <span>
+                                    {{ error }}
+                                </span> 
+                            {% endfor %}
+                        </div>
+                    {% else %} 
+                        {{ form_blp.email(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form_blp.password.label(class="form-control-label") }}
+                    {{ form_blp.password(class="form-control form-control-lg") }}
+                </div>
+                <br>
+                <div class="form-check">
+                    {{ form_blp.remember(class="form-check-input") }} 
+                    {{ form_blp.remember.label(class="form-check-label") }} 
+                </div>
+            </fieldset>
+            <br>
+            <div class="form-group">
+                {{ form_blp.submit(class="btn btn-primary")}}
+            </div>
+            <div>
+                <small class="text-muted ml-2">
+                    <a href="{{ url_for('reset_request') }}">Forgot Password ?</a>
+                </small>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <div>
+                <b>Need an account ? </b><a class="ml-2" href="{{ url_for('registration_page') }}">Register here</a>
+            </div>
+        </div>
+
+    </div>
+{% endblock contents %}

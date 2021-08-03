@@ -1,0 +1,32 @@
+{% extends "layout_page.html" %}
+{% block contents %}
+    <div class="content-section shadows">
+        <form method="POST" action="">
+            {{ form_blp.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="boder-bottom mb-4"><h3>Reset Password</h3></legend>
+                <div class="form-group">
+                    {{ form_blp.email.label(class="form-control-label") }}
+
+                    {% if form_blp.email.errors %} 
+                        {{ form_blp.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form_blp.email.errors %}
+                                <span>
+                                    {{ error }}
+                                </span> 
+                            {% endfor %}
+                        </div>
+                    {% else %} 
+                        {{ form_blp.email(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                {{ form_blp.submit(class="btn btn-primary")}}
+            </div>
+        </form>
+    </div>
+{% endblock contents %}
+            

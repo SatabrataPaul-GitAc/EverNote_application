@@ -1,0 +1,44 @@
+{% extends "layout_page.html" %} 
+{% block contents %} 
+  <h1>BLOG POSTS !!!</h1>
+  <b><hr></b>
+  <br>
+    {% for p in posts.items %} 
+    <article class="media content-section">
+      <img class="rounded-circle article-img" src="{{ url_for('static',filename='profile_pic/'+ p.author.image_file) }}">
+        <div class="media-body">
+          <div class="article-metadata">
+            {% if current_user.is_authenticated %}
+                {% if p.author.username == current_user.username %}
+                    <a class="mr-2" href="/account" data-toggle="tooltip" data-placement="bottom" title="Account Info">{{ p.author.username }}</a>
+                {% else %} 
+                    <a class="mr-2" href="">{{ p.author.username }}</a>
+                {% endif %} 
+            {% else %} 
+              <a class="mr-2" href="">{{ p.author.username }}</a>
+            {% endif %} 
+            <small class="text-muted"><b>Posted On : {{ p.date_posted }}</b></small>
+          </div>
+          
+          {% if current_user.is_authenticated %}
+            <h2><a class="article-title" data-toggle="tooltip" data-placement="bottom" title="View Post" href="{{ url_for('post',post_id=p.id) }}">{{ p.title }}</a></h2>
+          {% else %} 
+            <h2><a class="article-title" href="">{{ p.title }}</a></h2>
+          {% endif %} 
+          <p class="article-content">{{ p.content }}</p>
+        </div>
+    </article>
+    {% endfor %}
+
+    {% for page_num in posts.iter_pages(left_edge=1, left_current=1, right_current=1, right_edge=1) %} 
+      {% if page_num %} 
+        {% if posts.page == page_num %} 
+              <a class="btn btn-info mb-2" href="{{ url_for('posts_page',page=page_num) }}">&nbsp;{{ page_num }}</a>
+        {% else %}
+            <a class="btn btn-outline-info mb-2" href="{{ url_for('posts_page',page=page_num) }}">&nbsp;{{ page_num }}</a>
+        {% endif %}
+      {% else %}
+        <b style="color: white;">....</b>
+      {% endif %}
+    {% endfor %}
+{% endblock contents %}

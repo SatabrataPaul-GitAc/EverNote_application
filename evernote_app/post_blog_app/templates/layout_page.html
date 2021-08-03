@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="{{url_for('static',filename='main.css')}}" rel="stylesheet">
+    {% block optional_css %}{% endblock %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    {% if title %}
+            <title>{{title}}</title>
+        {% else %} 
+            {% block title %} 
+                <title>Blog APP</title>
+            {% endblock title %}
+
+    {% endif %}
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand mr-4 my-font" href="/home">EverNote</a>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" id="links"  href="/home" tabindex="1">Home</a>
+            <a class="nav-item nav-link" id="links" href="/posts" tabindex="2">Posts</a>
+          </div>
+          <!-- Navbar Right Side -->
+          <div class="navbar-nav">
+            {% if current_user.is_authenticated %} 
+            <a class="nav-item nav-link" id="links" href="/userposts/{{current_user.username}}" tabindex="3">My Posts</a>
+              <a class="nav-item nav-link" id="links" href="/posts/new" tabindex="3">New Post</a>
+              <a class="nav-item nav-link" id="links"  href="/account" tabindex="3">Account</a>
+              <a class="nav-item nav-link" id="links" href="/logout" tabindex="4">Logout</a>
+            {% else %}
+              <a class="nav-item nav-link" id="links" href="/account" tabindex="3">Account</a>
+              <a class="nav-item nav-link" id="links" href="/login" tabindex="4">Login</a>
+              <a class="nav-item nav-link" id="links" href="/register" tabindex="5">Register</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% with messages = get_flashed_messages(with_categories=true) %} 
+          {% if messages %} 
+            {% for category,message in messages %} 
+              <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div> 
+            {% endfor %} 
+          {% endif %} 
+        {% endwith %} 
+
+        {% block contents %}{% endblock %}
+      </div>
+      <div class="col-md-4">
+        <div class="content-section">
+          <h3>Sidebar Navigator</h3>
+          <p class='text-muted'>You can put any information here you'd like.
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-light"><a href="{{url_for('latest_posts')}}" style="text-decoration: none;">Latest Posts</a></li>
+              <li class="list-group-item list-group-item-light">Announcements</li>
+              <li class="list-group-item list-group-item-light">etc</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <br><br><br><br>
+
+  <footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="social-wrapper">
+      <ul>
+        <li>
+          <a href="https://twitter.com/SatabrataYo" target="_blank">
+            <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png" alt="Twitter Logo" class="twitter-icon"></a>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img src="https://i.pinimg.com/originals/c8/95/2d/c8952d6e421a83d298a219edee783167.jpg" alt="Instagram Logo" class="instagram-icon"></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/satabrata-paul-83b3891b0" target="_blank">
+            <img src="https://image.similarpng.com/very-thumbnail/2021/01/Illustration-of-Linkedin-icon-on-transparent-background-PNG.png" alt="Linkedin Logo" class="linkedin-icon"></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/satabrata.paul" target="_blank">
+            <img src="http://www.iconarchive.com/download/i54037/danleech/simple/facebook.ico" alt="Facebook Logo" class="facebook-icon"></a>
+        </li>
+        <li>
+          <a href="https://github.com/SatabrataPaul-GitAc/" target="_blank">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdEDRcecSKdcmQXMt_-F8JRlc666B6KkiiA0lP31C8ZrKLbROWG1MaAtUR8q1BQSCwZXw&usqp=CAU" alt="Github-logo" class="github-icon"></a>
+        </li>
+      </ul>
+    </div>
+  
+    <nav class="footer-nav" role="navigation">
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright &copy; 2021 - Satabrata Paul</p>
+    </nav>
+  </footer>
+  <!-- #colophon -->
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  {% block optional_js %}{% endblock %}
+</body>
+</html>

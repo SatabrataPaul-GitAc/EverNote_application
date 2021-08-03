@@ -1,0 +1,160 @@
+body {
+    background-color: #035a7c;
+    color: #333333;
+    margin-top: 5rem;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: rgb(0,0,0);
+  }
+
+  .bg-steel {
+    background-color: #5f788a;
+  }
+  
+  .site-header .navbar-nav .nav-link {
+    color: #cbd5db;
+  }
+  
+  .site-header .navbar-nav .nav-link:hover {
+    color: #ffffff;
+  }
+  
+  .site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+  }
+  
+  .content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+  
+  .article-title {
+    color: #444444;
+  }
+  
+  a.article-title:hover {
+    color: rgb(161, 9, 161);
+    text-decoration: none;
+  }
+  
+  .article-content {
+    white-space: pre-line;
+  }
+  
+  .article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+  }
+  
+  .article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+  }
+  
+  .article-metadata a:hover {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+  }
+  
+  .account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+    border: 1px solid black;
+    padding: 5px;
+  }
+  
+  .account-heading {
+    font-size: 2.5rem;
+  }
+
+
+
+  .site-footer {
+    background-color: rgba(0, 0, 0, 0.836);
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px 0;
+  }
+  
+  #social-wrapper {
+    text-align: center;
+  }
+  
+  /*Social Media Icons*/
+  .social-wrapper {
+    text-align: center;
+  }
+  
+  .social-wrapper ul li {
+    display: inline;
+    margin: 0 5px;
+  }
+  
+  .twitter-icon,
+  .facebook-icon,
+  .instagram-icon,
+  .linkedin-icon,
+  .github-icon,
+  .note-icon{
+    margin-top: .625em;
+    width: 37px;
+    height: 37px;
+    opacity: .8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+    border-radius: 25px;
+  }
+  
+  .twitter-icon:hover,
+  .facebook-icon:hover,
+  .instagram-icon:hover,
+  .linkedin-icon:hover,
+  .googleplus-icon:hover,
+  .github-icon:hover,
+  .foursquare-icon:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+  }
+  
+  .footer-nav p {
+    text-align: center;
+    color: white;
+  }
+
+  .my-font
+  {
+    font-family: cursive;
+  }
+
+  .shadows
+  {
+    box-shadow: 5px 5px 5px black;
+  }
+
+#links:hover
+{
+  background-color: white;
+  color: #171010;
+  border-radius: 20px;
+}
+
+
+hr {
+  background-color: black;
+  height: 3px;
+}
+
+  
