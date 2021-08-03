@@ -5,7 +5,7 @@
       <div class="media-body">
         <div class="article-metadata">
           <a class="mr-2" href="/account">{{ p.author.username }}</a>
-          <small class="text-muted"><b>Posted On : {{ p.date_posted }}</b></small>
+          <small class="text-muted"><b>Posted On : {{ p.date_posted.strftime("%Y-%m-%d") }}</b></small>
           {% if p.author == current_user %} 
             <div>
               <a class="btn btn-success btn-sm m-1" href="{{ url_for('update_post',post_id=p.id) }}">Update</a>
