@@ -98,7 +98,7 @@ def account():
 @web_app.route("/posts")
 def posts_page():
     pg= request.args.get("page",1,type=int)
-    post_list = Post.query.order_by(Post.date_posted.desc()).paginate(page=pg,per_page=4)
+    post_list = Post.query.order_by(Post.date_posted.desc()).paginate(page=pg,per_page=10)
     return render_template("posts.html",posts=post_list,title="Posts")
 
 #This route allows the currently logged in user to create a new post.
@@ -126,7 +126,7 @@ def post(post_id):
 def user_posts(username):
     pg=request.args.get('page',1,type=int)
     user = User.query.filter_by(username=username).first_or_404()
-    post_list = Post.query.filter_by(author=user).order_by(Post.date_posted.desc()).paginate(page=pg,per_page=4)
+    post_list = Post.query.filter_by(author=user).order_by(Post.date_posted.desc()).paginate(page=pg,per_page=10)
     return render_template("user_post.html",posts=post_list,user=user)
 
 #This route allows the currently logged in user to update any of its existing posts.
