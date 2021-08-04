@@ -26,6 +26,7 @@ The following points list out the features that EverNote provides :
      + HTML5
      + CSS (Cascading Styling Sheets)
      + Bootstrap 4 
+     + Minimal Javascript (JS)
 - **Backend Design** :
      + FLASK in Python
 - **Webserver and WSGI Server** :
