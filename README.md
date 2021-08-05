@@ -11,12 +11,13 @@ as well , gaining an insight to different cultures , innovative notions , tastes
 The following points list out the features that EverNote provides : 
 
 - **Register or Create an account** 
+- **Welcome Email Receival**
 - **Login to the account created**
 - **View all Social Notes Posted by all users**
 - **Update account information**
 - **Upload or update the profile picture associated with the account**
 - **Create a post**
-- **Update an existing post or delete them**
+- **Update an existing post or Delete them**
 - **Password Reset functionality**
 
 <br />
